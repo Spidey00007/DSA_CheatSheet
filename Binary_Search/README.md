@@ -11,6 +11,6 @@ for(int i=1; i<nums.size(); i++) {
 ### :dragon: Accessing prefix sum in range of (left & right)
 
 ```
-sum=prefix[right]-prefix[left]+nums[l];
+sum=prefix[right]-prefix[left]+nums[left];
 
 ```

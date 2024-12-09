@@ -1,5 +1,5 @@
 ### :memo: next_permutation ➡️
-```c++
+
 It gives the next lexicographically greater permutation.
 So, if the container is already the greatest permutation (descending order), it returns nothing.
 
@@ -18,4 +18,27 @@ for(int &x : vec)
 
 Also : prev_permutation() - It gives just the previous lexicographically smaller permutation.
     Leetcode - 31  : Next Permutation
+
+### :volcano: 🌋 Code implementation of std: next_permutation :desert:
+```
+void nextPermutation(vector<int>& nums) {
+    int index = -1, n=nums.size();
+    for(int i=n-2; i>=0; i--) {
+        if(nums[i] < nums[i+1]) {
+            index = i;
+            break;
+        }
+    }
+    if(index == -1) {
+        reverse(nums.begin(), nums.end());
+        return;
+    }
+    for(int i=n-1; i>index; i--) {
+        if(nums[i] > nums[index]) {
+            swap(nums[i], nums[index]);
+            break;
+        }
+    }
+    reverse(nums.begin()+index+1, nums.end());
+}
 ```

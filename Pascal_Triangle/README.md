@@ -4,7 +4,7 @@
 ### :construction: Find the element at that place where Row and Column number given (indexing from 1)
 
 
-r = Row - 1
+r = Row - 1 <br>
 c = Column - 1
 
 Required element is: nCr = n! / (r! * (n - r)!)
@@ -118,7 +118,7 @@ int main()
 }
 ```
 
-:comet: Output:
+:comet: Output: <br>
 1 <br>
 1 1 <br>
 1 2 1 <br>

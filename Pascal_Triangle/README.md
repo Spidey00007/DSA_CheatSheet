@@ -4,6 +4,9 @@
 r = Row - 1
 c = Column - 1
 
+n<sup>C</sup><sub>r</sub>
+
+
 $$
 \binom{n}{r}
 $$

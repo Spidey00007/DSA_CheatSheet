@@ -42,9 +42,10 @@ int main()
 }
 ```
 
+<hr></hr>
 ### :tornado: Print Nth row of pascal triangle
 
-<img align="center" alt="Pascal trianlge element shortcut" height="250" width="200" src="https://static.takeuforward.org/wp/uploads/2023/04/Screenshot-2023-04-30-214245.png">
+<img align="center" alt="Pascal trianlge element shortcut" height="350" width="400" src="https://static.takeuforward.org/wp/uploads/2023/04/Screenshot-2023-04-30-214245.png">
 
 #### :zap: Code for above question
 ```
@@ -71,6 +72,7 @@ int main()
     return 0;
 }
 ```
+<hr></hr>
 
 ### :snowman: Code to print pascal triangle
 ```
@@ -117,8 +119,8 @@ int main()
 ```
 
 :comet: Output:
-1
-1 1
-1 2 1
-1 3 3 1
+1 <br>
+1 1 <br>
+1 2 1 <br>
+1 3 3 1 <br>
 1 4 6 4 1

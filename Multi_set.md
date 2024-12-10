@@ -28,3 +28,6 @@ int main() {
     return 0;
 }
 ```
+
+## Practice a leetcode important problem
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit

@@ -1,4 +1,4 @@
-Use inbuilt function of LCM and GCD:
+### 🧬 Use inbuilt function of LCM and GCD:
 ```
 int result = gcd(a, b);
 int result = lcm(a, b);

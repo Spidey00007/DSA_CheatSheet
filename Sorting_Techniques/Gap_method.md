@@ -7,14 +7,9 @@ The **Gap Method** is an efficient algorithm to merge two sorted arrays without 
 
 ## :gear: Steps of the Algorithm
 1. **Initialize the gap**:
-   - Start with a gap equal to the combined size of the two arrays:  
-     \[
-     \text{gap} = \lceil \frac{m+n}{2} \rceil
-     \]
-   - Reduce the gap in each iteration:  
-     \[
-     \text{gap} = \lceil \frac{\text{gap}}{2} \rceil
-     \]
+   - Start with a gap equal to the combined size of the two arrays: <br>
+    Initial gap = ceil((size of arr1[] + size of arr2[]) / 2) <br>
+    gap = ceil( previous gap / 2) <br>
      until the gap becomes zero.
 
 2. **Compare and Swap Elements**:
@@ -35,46 +30,70 @@ The **Gap Method** is an efficient algorithm to merge two sorted arrays without 
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-    int gap = (m + n + 1) / 2; // Initialize gap
+void swapIfGreater(long long arr1[], long long arr2[], int ind1, int ind2) {
+    if (arr1[ind1] > arr2[ind2]) {
+        swap(arr1[ind1], arr2[ind2]);
+    }
+}
+
+void merge(long long arr1[], long long arr2[], int n, int m) {
+    // len of the imaginary single array:
+    int len = n + m;
+
+    // Initial gap:
+    int gap = (len / 2) + (len % 2);
 
     while (gap > 0) {
-        int i = 0, j = gap;
-        
-        while (j < m + n) {
-            int num1 = (i < m) ? nums1[i] : nums2[i - m];
-            int num2 = (j < m) ? nums1[j] : nums2[j - m];
-
-            if (num1 > num2) {
-                if (i < m && j < m) {
-                    swap(nums1[i], nums1[j]);
-                } else if (i < m) {
-                    swap(nums1[i], nums2[j - m]);
-                } else {
-                    swap(nums2[i - m], nums2[j - m]);
-                }
+        // Place 2 pointers:
+        int left = 0;
+        int right = left + gap;
+        while (right < len) {
+            // case 1: left in arr1[]
+            //and right in arr2[]:
+            if (left < n && right >= n) {
+                swapIfGreater(arr1, arr2, left, right - n);
             }
-
-            i++;
-            j++;
+            // case 2: both pointers in arr2[]:
+            else if (left >= n) {
+                swapIfGreater(arr2, arr2, left - n, right - n);
+            }
+            // case 3: both pointers in arr1[]:
+            else {
+                swapIfGreater(arr1, arr1, left, right);
+            }
+            left++, right++;
         }
+        // break if iteration gap=1 is completed:
+        if (gap == 1) break;
 
-        // Reduce the gap for the next iteration
-        gap = (gap == 1) ? 0 : (gap + 1) / 2;
+        // Otherwise, calculate new gap:
+        gap = (gap / 2) + (gap % 2);
     }
+}
+
+int main()
+{
+    long long arr1[] = {1, 4, 8, 10};
+    long long arr2[] = {2, 3, 9};
+    int n = 4, m = 3;
+    merge(arr1, arr2, n, m);
+    cout << "The merged arrays are: " << "\n";
+    cout << "arr1[] = ";
+    for (int i = 0; i < n; i++) {
+        cout << arr1[i] << " ";
+    }
+    cout << "\narr2[] = ";
+    for (int i = 0; i < m; i++) {
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+    return 0;
 }
 ```
 
 ## :chart_with_upwards_trend: Complexity Analysis
 
-### Time Complexity:
-\[
-O((m+n) \log(m+n))
-\]  
-- The gap reduces logarithmically, and each pass involves linear traversal.
+### Time Complexity: O((n+m)*log(n+m)), where n and m are the sizes of the given arrays.
+- Reason: The gap reduces logarithmically, and each pass involves linear traversal.
 
-### Space Complexity:
-\[
-O(1)
-\]  
-- No extra space is used aside from a few variables.
+### Space Complexity: O(1) as we are not using any extra space. 

@@ -15,7 +15,7 @@ Steps involved:
 
 ---
 
-#### :flying_saucer: Code for Merge Sort with extra space
+#### :flying_saucer: Code for Merge Sort with extra space, Space Complexity: O(n)
 
 ```cpp
 #include <bits/stdc++.h>
@@ -88,7 +88,10 @@ int main() {
 }
 ```
 
-#### :flying_saucer: Code for Merge Sort without extra space
+---
+
+### :flying_saucer: Code for Merge Sort without extra space
+#### Gap method: Intitution comes from "Shell Sorting", Space Complexity: O(1)
 
 ```
 #include <bits/stdc++.h>

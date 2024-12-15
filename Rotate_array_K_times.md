@@ -5,7 +5,7 @@ It excludes the element at end.
 
 ### :hotsprings: Rotate array k times left:
 
-```                                                       
+```cpp                                          
 // Reverse the first k elements (0 to k-1)
 reverse(nums.begin(), nums.begin() + k);
 
@@ -18,7 +18,7 @@ reverse(nums.begin(), nums.end());
 
 ### :rocket: Rotate array k times right:
 
-```                                                
+```cpp                               
 // Reverse the first part (0 to n-k-1)
 reverse(nums.begin(), nums.begin() + (n - k));
 

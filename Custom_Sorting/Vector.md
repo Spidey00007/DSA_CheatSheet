@@ -1,6 +1,6 @@
 ### :trollface: Practice : 1636. Sort Array by Increasing Frequency
 
-```
+```cpp
 class Solution {
 public:
     vector<int> frequencySort(vector<int>& nums) {
@@ -18,7 +18,7 @@ public:
 };
 ```
 
-```								
+```cpp		
 class Solution {
 public:
     vector<int> frequencySort(vector<int>& nums) {

@@ -1,5 +1,5 @@
 ### :memo: upper_bound(), lower_bound() in sorted vector, ordered set, ordered map :outbox_tray:
-```c++
+```cpp
 
 For vector:
 vector<int> vec{10,20,30,30,20,10,10,20};

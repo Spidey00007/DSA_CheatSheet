@@ -20,7 +20,7 @@ Also : prev_permutation() - It gives just the previous lexicographically smaller
     Leetcode - 31  : Next Permutation
 
 ### 🌋 Code implementation of std: next_permutation :desert:
-```
+```cpp
 void nextPermutation(vector<int>& nums) {
     int index = -1, n=nums.size();
     for(int i=n-2; i>=0; i--) {

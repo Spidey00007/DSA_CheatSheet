@@ -93,7 +93,7 @@ int main() {
 ### :flying_saucer: Code for Merge Sort without extra space
 #### Gap method: Intitution comes from "Shell Sorting", Space Complexity: O(1)
 
-```
+``` cpp
 #include <bits/stdc++.h>
 using namespace std;
 

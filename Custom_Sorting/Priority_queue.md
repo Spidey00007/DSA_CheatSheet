@@ -2,7 +2,7 @@
 
 - Default declarations
 
-```c++
+```cpp
 priority_queue<int> pq;                            //creates max-heap
 priority_queue<int, vector<int>> pq;               //creates max-heap
 ```
@@ -11,7 +11,7 @@ priority_queue<int, vector<int>> pq;               //creates max-heap
 
 - writing comparator function for priority_queue
 
-```c++
+```cpp
 1. Using in-built comparator provided by C++ :
 
 priority_queue<int, vector<int>, greater<int>> pq;  //creates min-heap
@@ -19,7 +19,7 @@ priority_queue< pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> 
 priority_queue< pair<int, int>, vector<pair<int, int>>, greater<> > pq;               //min_heap of pairs
 ```
 
-```c++
+```cpp
 2. Using user defined comparator as a structure
 
 struct comp {
@@ -32,7 +32,7 @@ struct comp {
 priority_queue<int, vector<int>, comp> pq;  //usage
 ```
 
-```c++
+```cpp
 3. Using user defined comparator as a function
 
 static bool comp(int &a, int &b) {
@@ -43,7 +43,7 @@ static bool comp(int &a, int &b) {
 priority_queue<int, vector<int>, function<bool(int&, int&)> > pq(comp);   //usage
 ```
 
-```c++
+```cpp
 4. Using lambda function
 
 auto comp = [](int &a, int &b) {

@@ -11,7 +11,7 @@ Required element is: nCr = n! / (r! * (n - r)!)
 
 #### :tornado: Code for above question
 
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -48,7 +48,7 @@ int main()
 <img align="center" alt="Pascal trianlge element shortcut" height="350" width="400" src="https://static.takeuforward.org/wp/uploads/2023/04/Screenshot-2023-04-30-214245.png">
 
 #### :zap: Code for above question
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -75,7 +75,7 @@ int main()
 <hr></hr>
 
 ### :snowman: Code to print pascal triangle
-```
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

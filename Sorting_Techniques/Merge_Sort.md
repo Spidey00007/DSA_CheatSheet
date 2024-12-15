@@ -89,6 +89,7 @@ int main() {
 ```
 
 ---
+# Here Gap sort will not work, figure out why :question::question::question:
 
 ### :flying_saucer: Code for Merge Sort without extra space
 #### Gap method: Intitution comes from "Shell Sorting", Space Complexity: O(1)

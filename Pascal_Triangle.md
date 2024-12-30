@@ -4,10 +4,10 @@
 ### :construction: Find the element at that place where Row and Column number given (indexing from 1)
 
 
-r = Row - 1 <br>
-c = Column - 1
+`r = Row - 1 <br>` <br>
+`c = Column - 1`
 
-Required element is: nCr = n! / (r! * (n - r)!)
+Required element is: `nCr = n! / (r! * (n - r)!)`
 
 #### :tornado: Code for above question
 

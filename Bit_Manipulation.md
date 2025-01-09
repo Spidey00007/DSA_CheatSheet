@@ -3,7 +3,7 @@
 
 ## 🧮 1. Count Set Bits (Hamming Weight)
 - Count the number of `1`s in the binary representation of a number.
-```
+```cpp
 int countSetBits(int n) {
     int count = 0;
     while (n) {
@@ -13,18 +13,36 @@ int countSetBits(int n) {
     return count;
 }
 ```
+Time Complexity : `O(no of bits)`
+
+- Right Shift and Assign `n >>= 1`: This shifts the bits of n to the right by 1 position and then assigns the result back to n.
+- `n >>= 1` is equivalent to `n = n >> 1` or `n = n / 2`
+
+### Another method
+```cpp
+int countSetBits(int n) {
+    int count=0;
+    while(n) {
+        n = n & (n-1);
+        count++;
+    }
+    return count;
+}
+```
+Time Complexity : `O(no of set bits)`
 
 ## 🔄 2. Check if a Number is a Power of Two
-- Determine if a number is a power of two.
-```
+- Determine if a number is a power of two. 
+```cpp
 bool isPowerOfTwo(int n) {
     return (n > 0) && ((n & (n - 1)) == 0);
 }
 ```
+Time Complexity : `O(1)`
 
 ## ↔️ 3. Toggle a Bit
 - Toggle the `k`-th bit of a number.
-```
+```cpp
 int toggleBit(int n, int k) {
     return n ^ (1 << k);
 }
@@ -32,7 +50,7 @@ int toggleBit(int n, int k) {
 
 ## 📋 4. Set a Bit
 - Set the `k`-th bit of a number to `1`.
-```
+```cpp
 int setBit(int n, int k) {
     return n | (1 << k);
 }
@@ -40,7 +58,7 @@ int setBit(int n, int k) {
 
 ## ❌ 5. Clear a Bit
 - Clear the `k`-th bit of a number.
-```
+```cpp
 int clearBit(int n, int k) {
     return n & ~(1 << k);
 }
@@ -48,7 +66,7 @@ int clearBit(int n, int k) {
 
 ## 🧐 6. Check if a Bit is Set
 - Check if the `k`-th bit of a number is set.
-```
+```cpp
 bool isBitSet(int n, int k) {
     return (n & (1 << k)) != 0;
 }
@@ -56,7 +74,7 @@ bool isBitSet(int n, int k) {
 
 ## 🔄 7. Swap Two Numbers Without Temp Variable
 - Swap two numbers using bitwise operations.
-```
+```cpp
 void swapNumbers(int &a, int &b) {
     a ^= b;
     b ^= a;
@@ -64,29 +82,24 @@ void swapNumbers(int &a, int &b) {
 }
 ```
 
-## 🛠 8. Find the Only Non-Repeating Element
-- Find the unique element in an array where every other element repeats.
-```
-int findUnique(int arr[], int n) {
-    int result = 0;
-    for (int i = 0; i < n; ++i) {
-        result ^= arr[i];
-    }
-    return result;
-}
-```
-
-## 🚩 9. Get the Lowest Set Bit
+## 🚩 8. Get the Lowest Set Bit
 - Get the position of the lowest set bit in a number.
-```
+```cpp
 int getLowestSetBit(int n) {
     return n & -n;
 }
 ```
 
+## 🛠 9. Unset last set bit(rightmost)
+```cpp
+int unsetLastBit(int n) {
+    return n & (n-1);
+}
+```
+
 ## 📈 10. Count Different Bits in Two Numbers
 - Count the number of differing bits between two numbers.
-```
+```cpp
 int countDifferentBits(int a, int b) {
     int diff = a ^ b;
     int count = 0;
@@ -100,7 +113,7 @@ int countDifferentBits(int a, int b) {
 
 ## 🌟 11. Reverse Bits of a Number
 - Reverse the bits of a 32-bit unsigned integer.
-```
+```cpp
 unsigned int reverseBits(unsigned int n) {
     unsigned int result = 0;
     for (int i = 0; i < 32; ++i) {
@@ -113,7 +126,7 @@ unsigned int reverseBits(unsigned int n) {
 
 ## 🔢 12. Find Missing Number in Array (XOR Method)
 - Find the missing number in an array of size `n-1` containing numbers from `1` to `n`.
-```
+```cpp
 int findMissingNumber(int arr[], int n) {
     int x1 = 0, x2 = 0;
     for (int i = 0; i < n - 1; ++i) x1 ^= arr[i];

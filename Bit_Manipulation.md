@@ -134,3 +134,25 @@ int findMissingNumber(int arr[], int n) {
     return x1 ^ x2;
 }
 ```
+
+## 🍇 13. XOR of numbers from 1 to n
+ ```cpp
+ int findXor(int n) {
+    if(n%4 == 0) return n;
+    if(n%4 == 1) return 1;
+    if(n%4 == 2) return n+1;
+    if(n%4 == 3) return 0;
+ }
+ ```
+ - PROBLEM : Find XOR from L to R
+ ```cpp
+ int findXor(int n) {
+    if(n%4 == 0) return n;
+    if(n%4 == 1) return 1;
+    if(n%4 == 2) return n+1;
+    if(n%4 == 3) return 0;
+ }
+ int findXorLtoR(int L, int R) {
+    return findXor(L-1) ^ findXor(R);
+ }
+```

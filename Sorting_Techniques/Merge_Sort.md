@@ -15,7 +15,7 @@ Steps involved:
 
 ---
 
-#### :flying_saucer: Code for Merge Sort with extra space, Space Complexity: O(n)
+#### 🧠 Code for Merge Sort with extra space, Space Complexity: O(n)
 
 ```cpp
 #include <bits/stdc++.h>
@@ -23,28 +23,24 @@ using namespace std;
 
 
 void merge(int l, int mid, int r, vector<int>& nums) {
-    vector<int> temp(r-l+1);
-    int index=0, left=l, right=mid+1;
+    vector<int> temp;
+    int left=l, right=mid+1;
     while(left<=mid && right<=r) {
         if(nums[left] <= nums[right]) {
-            temp[index]=nums[left];
-            index++;
+            temp.push_back(nums[left]);
             left++;
         }
         else {
-            temp[index]=nums[right];
-            index++;
+            temp.push_back(nums[right]);
             right++;
         }
     }
     while(left<=mid) {
-        temp[index]=nums[left];
-        index++;
+        temp.push_back(nums[left]);
         left++;
     }
     while(right<=r) {
-        temp[index]=nums[right];
-        index++;
+        temp.push_back(nums[right]);
         right++;
     }
     
@@ -63,67 +59,6 @@ void mergeSort(int l, int r, vector<int>& nums) {
     mergeSort(l, mid, nums);
     mergeSort(mid+1, r, nums);
     merge(l, mid, r, nums);
-}
-
-
-int main() {
-
-    vector<int> nums = {9, 4, 7, 6, 3, 1, 5}  ;
-    int n = nums.size();
-
-    cout << "Before Sorting Array: " << endl;
-    for (int i = 0; i < n; i++) {
-        cout << nums[i] << " "  ;
-    }
-    cout << endl;
-
-    mergeSort(0, n - 1, nums);
-
-    cout << "After Sorting Array: " << endl;
-    for (int i = 0; i < n; i++) {
-        cout << nums[i] << " "  ;
-    }
-    cout << endl;
-    return 0 ;
-}
-```
-
----
-# Here Gap sort will not work, figure out why :question::question::question:
-
-### :flying_saucer: Code for Merge Sort without extra space
-#### Gap method: Intitution comes from "Shell Sorting", Space Complexity: O(1)
-
-``` cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-void merge(int l, int r, vector<int>& nums) {
-    int len=r-l+1;
-    int gap=len;
-    
-    while(gap>0) {
-        gap=(gap/2) + (gap%2);
-        for(int i=gap; i<len; i++) {
-            if(nums[i] < nums[i-gap]) {
-                swap(nums[i], nums[i-gap]);
-            }
-        }
-        if(gap==1) {
-            break;
-        }
-    }
-}
-
-void mergeSort(int l, int r, vector<int>& nums) {
-    if(l >= r) {
-        return;
-    }
-
-    int mid=l+(r-l)/2;
-    mergeSort(l, mid, nums);
-    mergeSort(mid+1, r, nums);
-    merge(l, r, nums);
 }
 
 

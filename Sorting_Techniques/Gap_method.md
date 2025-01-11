@@ -1,16 +1,16 @@
-# :rocket: Gap Method for Merging Sorted Arrays :star2:
+# 🚀 Gap Method for Merging Sorted Arrays ⭐
 
-## :bulb: Overview
+## 💡 Overview
 The **Gap Method** is an efficient algorithm to merge two sorted arrays without using extra space. It progressively reduces the gap between compared elements until the arrays are fully merged.
 
 ---
 
-## :gear: Steps of the Algorithm
+## ⚙️ Steps of the Algorithm
 1. **Initialize the gap**:
    - Start with a gap equal to the combined size of the two arrays: <br>
-    Initial gap = ceil((size of arr1[] + size of arr2[]) / 2) <br>
-    gap = ceil( previous gap / 2) <br>
-     until the gap becomes zero.
+    `Initial gap = ceil((size of arr1[] + size of arr2[]) / 2)` <br>
+    `gap = ceil( previous gap / 2)` <br>
+     until the gap becomes `zero`.
 
 2. **Compare and Swap Elements**:
    - Compare elements separated by the gap:
@@ -20,12 +20,12 @@ The **Gap Method** is an efficient algorithm to merge two sorted arrays without 
      - **Between `nums1` and `nums2`**  
      - **Within `nums2`**
 
-3. **Repeat Until the Gap Becomes Zero**:
+3. **Repeat Until the Gap Becomes `Zero`**:
    - Continue reducing the gap and performing comparisons until all elements are in sorted order.
 
 ---
 
-## :zap: Code Implementation
+## ⚡ Code Implementation
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -91,7 +91,7 @@ int main()
 }
 ```
 
-## :chart_with_upwards_trend: Complexity Analysis
+## 📈 Complexity Analysis
 
 ### Time Complexity: O((n+m)*log(n+m)), where n and m are the sizes of the given arrays.
 - Reason: The gap reduces logarithmically, and each pass involves linear traversal.

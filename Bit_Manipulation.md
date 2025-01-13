@@ -156,3 +156,24 @@ int findMissingNumber(int arr[], int n) {
     return findXor(L-1) ^ findXor(R);
  }
 ```
+
+## 🎨 14. Unset all bits except rightmost set bit
+- **`-temp` is the two's complement of `temp`**
+
+🔍 **Performing `temp & (-temp)`:**
+This operation clears all bits in `temp` except for the **rightmost set bit**.
+
+For example:
+- `temp = 12` (binary: `1100`)
+- `-temp = -12` (binary: `0100`)
+
+Now, perform the bitwise AND:
+- `temp & (-temp) = 1100 & 0100 = 0100`
+
+🧠 As you can see, only the **rightmost 1-bit** in `temp` remains (which in this case is `4`). 🎯
+
+```cpp
+int rightmostSetBit(int n) {
+    n & (-n);
+}
+```

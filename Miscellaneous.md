@@ -1,13 +1,69 @@
-🔴 Number of bit in binary of a num = int(log2(num)) + 1 <br>
-🔴	 Number of digit in a number = int(log10(num)) + 1     :basecampy: Number should be greater than 0 else take abs()
-<hr>
-🟢 We cannot use unordered_map or unordered_set of pair type. So, use map or set to store key or value as pair type.
-<hr>
-🟢 using string property: string(n,'?')    which add '?' n times in string
-<hr>
-🟣 Directly we can return == operator for two vector, set or map, but not stack or queue.
-<hr>
-🟣 Sorting the string "-4563782001" will rearrange its characters in ascending order based on ASCII values: The - character has the lowest ASCII value among the characters. Then, the digits will follow in ascending order. <br>
-🟣 So, sorting "-4563782001" will result in: "-0123456789".
-<hr>
-🟠 stoll(st)  => string to long long
+# 🚀 Miscellaneous
+
+## 🧮 Number Properties
+```cpp
+// Number of Bits in Binary
+int bits = int(log2(num)) + 1;
+
+// Number of Digits in Decimal
+int digits = int(log10(num)) + 1;
+```
+
+## ✏️ Repeat Character in String  
+```cpp
+//It adds '?' n times in string
+
+string str = string(5, '?');
+```
+
+## 🧪 Compare Containers  
+- Use `==` to directly compare vector, set, or map.
+- Can't be used in stack or queue.
+
+## 🪄 Sorting String with Hyphen  
+- Sorting the string "-4563782001" will rearrange its characters in ascending order based on ASCII characters.
+- The `-` character has the lowest ASCII value among the characters. So, the digits will be in ascending order.
+- Sorting `-4563782001` will result in: `-0123456789`
+
+# 🚫 Not Allowed Without Custom Hash
+
+Using `unordered_map` or `unordered_set` with certain types requires a custom hash function. The following are **not allowed by default**:
+
+| ❌ Type              | ❌ Example                                 |
+|---------------------|--------------------------------------------|
+| **Pairs**           | `unordered_set<pair<int, int>>`           |
+| **Tuples**          | `unordered_map<tuple<int, int, int>, int>`|
+| **Custom Classes**  | `unordered_set<MyClass>`                  |
+
+---
+
+# ✅ Allowed in Ordered Containers
+
+These types **are allowed** in `map` and `set` (ordered containers) because they use **comparators** (`operator<`) instead of hash functions.
+
+| ✔️ Type              | ✔️ Example                                 |
+|----------------------|--------------------------------------------|
+| **Pairs**            | `map<pair<int, int>, int>`                |
+| **Tuples**           | `set<tuple<int, int, int>>`               |
+| **Custom Classes**   | `set<MyClass>` *(with operator< defined)* |
+
+
+# 🧱 Data Structures & Access Support
+
+## 1️⃣ Data Structures That Support Both `front()` and `back()`
+
+| Data Structure       | `front()` | `back()` | Notes                                    |
+|----------------------|----------|----------|------------------------------------------|
+| `queue` (FIFO)       | ✅       | ✅       | Standard queue (first-in, first-out)     |
+| `deque`              | ✅       | ✅       | Supports push/pop from both ends         |
+| `vector`             | ✅       | ✅       | Efficient for accessing both ends        |
+| `list` (Doubly Linked)| ✅       | ✅       | Efficient for insert/delete at both ends |
+
+---
+
+## 2️⃣ Data Structures That Support Only `front()`
+
+| Data Structure     | `front()` | `back()` | Notes                                           |
+|--------------------|-----------|----------|-------------------------------------------------|
+| `stack` (LIFO)     | ❌        | ✅       | Only top element is accessible (`stack.top()`)  |
+| `priority_queue`   | ❌        | ✅       | Only highest-priority element accessible (`pq.top()`) |

@@ -35,7 +35,6 @@ Using `unordered_map` or `unordered_set` with certain types requires a custom ha
 | **Tuples**          | `unordered_map<tuple<int, int, int>, int>`|
 | **Custom Classes**  | `unordered_set<MyClass>`                  |
 
----
 
 # ✅ Allowed in Ordered Containers
 
@@ -59,7 +58,6 @@ These types **are allowed** in `map` and `set` (ordered containers) because they
 | `vector`             | ✅       | ✅       | Efficient for accessing both ends        |
 | `list` (Doubly Linked)| ✅       | ✅       | Efficient for insert/delete at both ends |
 
----
 
 ## 2️⃣ Data Structures That Support Only `front()`
 

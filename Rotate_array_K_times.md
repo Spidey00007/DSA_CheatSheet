@@ -1,11 +1,33 @@
-## :heart_on_fire: The std::reverse function operates on a half-open range [start, end). This means:       :heart_on_fire:
-It includes the element at start.
-It excludes the element at end.
+# ❤️‍🔥 Rotate array K Times
+
+The `std::reverse` function operates on a half-open range `[start, end)`.
+
+- ✅ Includes the element at `start`
+- ❌ Excludes the element at `end`
+
+---
 
 
-### :hotsprings: Rotate array k times left:
+## 🔁 Rotations using std::rotate
 
-```cpp                                          
+### ⬅️ LEFT rotation (k steps)
+
+```cpp
+rotate(mat[i].begin(), mat[i].begin() + k, mat[i].end());
+```
+
+
+### ➡️ RIGHT rotation (k steps)
+
+```cpp
+rotate(mat[i].rbegin(), mat[i].rbegin() + k, mat[i].rend());
+```
+
+---
+
+## ♨️ Rotate array k times LEFT (using reverse)
+
+```cpp
 // Reverse the first k elements (0 to k-1)
 reverse(nums.begin(), nums.begin() + k);
 
@@ -16,9 +38,11 @@ reverse(nums.begin() + k, nums.end());
 reverse(nums.begin(), nums.end());
 ```
 
-### :rocket: Rotate array k times right:
 
-```cpp                               
+
+## 🚀 Rotate array k times RIGHT (using reverse)
+
+```cpp
 // Reverse the first part (0 to n-k-1)
 reverse(nums.begin(), nums.begin() + (n - k));
 

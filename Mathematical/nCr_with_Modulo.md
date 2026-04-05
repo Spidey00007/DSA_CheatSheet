@@ -6,7 +6,7 @@ nCr = n! / (r!(n-r)!)
 
 ### 👉 Under Modulo:
 
-nCr = fact[n] _ invFact[r] _ invFact[n-r] % MOD
+nCr = fact[n] * invFact[r] * invFact[n-r] % MOD
 
 ### 📖 Fermat’s Little Theorem:
 

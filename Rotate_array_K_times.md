@@ -13,14 +13,14 @@ The `std::reverse` function operates on a half-open range `[start, end)`.
 ### ⬅️ LEFT rotation (k steps)
 
 ```cpp
-rotate(mat[i].begin(), mat[i].begin() + k, mat[i].end());
+rotate(nums.begin(), nums.begin() + k, nums.end());
 ```
 
 
 ### ➡️ RIGHT rotation (k steps)
 
 ```cpp
-rotate(mat[i].rbegin(), mat[i].rbegin() + k, mat[i].rend());
+rotate(nums.rbegin(), nums.rbegin() + k, nums.rend());
 ```
 
 ---
